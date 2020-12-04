@@ -2,20 +2,38 @@ import React from 'react';
 import ReactDom from 'react-dom';
 
 
-function Greeting(){
+function BookList(){
   return (
-    <div>
-      <Person />
-      <Message />
-      <Message1 />
-    </div>
+    <section>
+      <Book />
+    </section>
   );
 }
 
-const Person = () => <h2>David Wu</h2>;
-const Message = () => {
-  return <h4>Edit This is David, my first component</h4>
+// Explicit return with the retun keyword
+const Book = () => {
+  return (
+    <article>
+      <Image></Image>
+      <Title />
+      <Author />
+    </article>
+  )
 }
-const Message1 = () => <h5>Hello David</h5>
 
-ReactDom.render(<Greeting/>, document.getElementById('root'));
+// Implicit retrun without the return keyword
+const Image = () => (
+  <img src ="https://m.media-amazon.com/images/I/61jcNGAvh7L._AC_UY218_.jpg" alt = ""/>
+);
+
+const Title = () => {
+  return (
+    <h1>Little Prince, Little Prince: What Will You Be?</h1>
+  )
+}
+
+const Author = () => (
+  <h4>Naomi Zacharias</h4>
+);
+
+ReactDom.render(<BookList/>, document.getElementById('root'));
