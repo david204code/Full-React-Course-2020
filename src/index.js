@@ -10,14 +10,15 @@ function BookList(){
     </section>
   );
 }
-
+const author = 'Naomi Zacharias'
 // Explicit return with the retun keyword
 const Book = () => {
+  const title = 'Little Prince, Little Prince: What Will You Be?'
   return (
     <article className ='book'>
       <img src ="https://m.media-amazon.com/images/I/61jcNGAvh7L._AC_UY218_.jpg" alt = ""/>
-      <h1>Little Prince, Little Prince: What Will You Be?</h1>
-      <h4 style ={{color :"#617d98", fontSize: '0.75rem', marginTop: '0.25rem'}}>Naomi Zacharias</h4>
+      <h1>{title}</h1>
+      <h4 style ={{color :"#617d98", fontSize: '0.75rem', marginTop: '0.25rem'}}>{author.toLocaleUpperCase()}</h4>
     </article>
   )
 }
