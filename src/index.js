@@ -39,8 +39,9 @@ const Title = () => {
   )
 }
 
+// inline styling
 const Author = () => (
-  <h4>Naomi Zacharias</h4>
+  <h4 style ={{color :"#617d98", fontSize: '0.75rem', marginTop: '0.25rem'}}>Naomi Zacharias</h4>
 );
 
 ReactDom.render(<BookList/>, document.getElementById('root'));
