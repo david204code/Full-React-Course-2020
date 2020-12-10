@@ -26,9 +26,13 @@ function BookList(){
 }
 // Explicit return with the retun keyword
 const Book = (props) => {
-  console.log(props)
+  // destructuring  
+  // const Book = ({img, title, author }) => {
+  // const { img, title, author } = props;
   return (
     <article className ='book'>
+      {/* destructuring result  */}
+      {/* <h1>{title}</h1> */}
       <img src ={props.img} alt = ""/>
       <h1>{props.title}</h1>
       <h4 style ={{color :"#617d98", fontSize: '0.75rem', marginTop: '0.25rem'}}>{props.author.toLocaleUpperCase()}</h4>
