@@ -62,7 +62,9 @@ function BookList(){
           //   <h3>{title}</h3>
           //   <h6>{author}</h6>
           // </div>
-          <Book key ={book.id} book ={book}></Book>
+          // <Book key ={book.id} book ={book}></Book>
+          // SPREAD OPERATOR ES6
+          <Book key ={book.id} {...book}></Book>
         );
       })}
 
@@ -88,7 +90,9 @@ const Book = (props) => {
   // destructuring  
   // const Book = ({img, title, author, children }) => {
   // destructing the book property instead of the props
-  const { img, title, author } = props.book;
+  // const { img, title, author } = props.book;
+  // SPRED operator 
+  const { img, title, author } = props;
   return (
     <article className ='book'>
       {/* destructuring result  */}
