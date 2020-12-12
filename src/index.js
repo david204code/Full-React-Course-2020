@@ -19,15 +19,27 @@ const secondBook = {
 function BookList(){
   return (
     <section className ="booklist">
-      <Book img ={firstBook.img} title ={firstBook.title} author ={firstBook.author}/>
-      <Book img ={secondBook.img} title ={secondBook.title} author ={secondBook.author}/>
+      <Book 
+        img ={firstBook.img} 
+        title ={firstBook.title} 
+        author ={firstBook.author}
+      >
+        {/* child props */}
+        <p>Deserunt id reprehenderit exercitation laboris minim exercitation sint magna laborum. Ex commodo et commodo ut proident tempor laboris. Excepteur exercitation sint ad voluptate. Minim incididunt voluptate laboris ullamco magna enim id occaecat commodo deserunt mollit eu excepteur. Aliquip sunt aute Lorem reprehenderit laborum labore magna do irure culpa proident aute deserunt. Est velit dolore sit do duis ex dolor voluptate veniam.</p>
+      </Book>
+      <Book 
+        img ={secondBook.img} 
+        title ={secondBook.title} 
+        author ={secondBook.author}
+      />
     </section>
   );
 }
 // Explicit return with the retun keyword
 const Book = (props) => {
+  // console.log(props)
   // destructuring  
-  // const Book = ({img, title, author }) => {
+  // const Book = ({img, title, author, children }) => {
   // const { img, title, author } = props;
   return (
     <article className ='book'>
@@ -36,6 +48,7 @@ const Book = (props) => {
       <img src ={props.img} alt = ""/>
       <h1>{props.title}</h1>
       <h4 style ={{color :"#617d98", fontSize: '0.75rem', marginTop: '0.25rem'}}>{props.author.toLocaleUpperCase()}</h4>
+      {props.children}
     </article>
   )
 }
