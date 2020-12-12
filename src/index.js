@@ -28,21 +28,39 @@ const books = [
     title: 'Grand Weaver The PB: How God Shapes Us Through the Events of Our Lives',
     author: 'Ravi Zacharias',
   },
+  {
+    img: 'https://m.media-amazon.com/images/I/81Zu01RLffL._AC_UY218_.jpg',
+    title: 'The Real Face of Athesim',
+    author: 'Ravi Zacharias',
+  },
 
 ];
-const names = ['john', 'peter', 'susan']
-// map method with parameter
-const newNames  = names.map((name) => {
-  // console.log(name);
-  return (
-    <h1>{name}</h1>
-  );
-});
-console.log(newNames);
+// const names = ['john', 'peter', 'susan']
+// // map method with parameter
+// const newNames  = names.map((name) => {
+//   // console.log(name);
+//   return (
+//     <h1>{name}</h1>
+//   );
+// });
+// console.log(newNames);
 function BookList(){
   return (
     <section className ="booklist">
-      {newNames}
+      {/* {newNames} */}
+
+      {books.map((book) => {
+        // console.log(book);
+        // destructuring
+        // const { img, title, author} = book;
+        return (
+          // <div>
+          //   <h3>{title}</h3>
+          //   <h6>{author}</h6>
+          // </div>
+          <Book book ={book}></Book>
+        );
+      })}
 
       {/* <Book 
         img ={firstBook.img} 
@@ -65,14 +83,15 @@ const Book = (props) => {
   // console.log(props)
   // destructuring  
   // const Book = ({img, title, author, children }) => {
-  // const { img, title, author } = props;
+  // destructing the book property instead of the props
+  const { img, title, author } = props.book;
   return (
     <article className ='book'>
       {/* destructuring result  */}
       {/* <h1>{title}</h1> */}
-      <img src ={props.img} alt = ""/>
-      <h1>{props.title}</h1>
-      <h4 style ={{color :"#617d98", fontSize: '0.75rem', marginTop: '0.25rem'}}>{props.author.toLocaleUpperCase()}</h4>
+      <img src ={img} alt = ""/>
+      <h1>{title}</h1>
+      <h4 style ={{color :"#617d98", fontSize: '0.75rem', marginTop: '0.25rem'}}>{author.toLocaleUpperCase()}</h4>
       {/* {props.children} */}
     </article>
   )
