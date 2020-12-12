@@ -19,16 +19,19 @@ import './index.css';
 const books = [
   
   {
+    id: 1,
     img: 'https://m.media-amazon.com/images/I/61jcNGAvh7L._AC_UY218_.jpg',
     title: 'Little Prince, Little Prince: What Will You Be?',
     author: 'Naomi Zacharias',
   },
   {
+    id: 2,
     img: 'https://m.media-amazon.com/images/I/61JunrhQrAL._AC_UY218_.jpg',
     title: 'Grand Weaver The PB: How God Shapes Us Through the Events of Our Lives',
     author: 'Ravi Zacharias',
   },
   {
+    id: 3,
     img: 'https://m.media-amazon.com/images/I/81Zu01RLffL._AC_UY218_.jpg',
     title: 'The Real Face of Athesim',
     author: 'Ravi Zacharias',
@@ -48,8 +51,9 @@ function BookList(){
   return (
     <section className ="booklist">
       {/* {newNames} */}
-
+      
       {books.map((book) => {
+        // can also pass in index (book, index) so set the KEY as index
         // console.log(book);
         // destructuring
         // const { img, title, author} = book;
@@ -58,7 +62,7 @@ function BookList(){
           //   <h3>{title}</h3>
           //   <h6>{author}</h6>
           // </div>
-          <Book book ={book}></Book>
+          <Book key ={book.id} book ={book}></Book>
         );
       })}
 
