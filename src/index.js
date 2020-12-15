@@ -93,14 +93,39 @@ const Book = (props) => {
   // const { img, title, author } = props.book;
   // SPRED operator 
   const { img, title, author } = props;
+
+  // event for react we need attribute, eventHandler
+  // onClick, onMouseOver event
+
+  // function for the event
+  const clickHandler = (e) => {
+    console.log(e);
+    console.log(e.target);
+    alert('hello world');
+  }
+
+  const complexExample = (props) => {
+    console.log(props.author);
+  }
   return (
-    <article className ='book'>
+    <article className ='book' onMouseOver ={() => {
+      console.log(props.title)
+    }}>
       {/* destructuring result  */}
       {/* <h1>{title}</h1> */}
       <img src ={img} alt = ""/>
-      <h1>{title}</h1>
+      {/* inline event handler function example */}
+      <h1 onClick ={ () => console.log(title)}>{title}</h1>
       <h4 style ={{color :"#617d98", fontSize: '0.75rem', marginTop: '0.25rem'}}>{author.toLocaleUpperCase()}</h4>
       {/* {props.children} */}
+      {/* Eventhandler can be reference function or inline function */}
+      <button type ="button" onClick ={clickHandler}>
+        Click
+      </button>
+      {/* set up a arror function so it will not  invoke immediately */}
+      <button type ="button" onClick ={() => complexExample(props)}>
+        More Complex example
+      </button>
     </article>
   )
 }
